@@ -1,0 +1,23 @@
+{% import "_includes/forms" as forms %}
+
+
+
+{{ forms.textField({
+label: "Ignore Folders"|t,
+id: 'ignore',
+name: 'ignore',
+instructions: "list any folders that you don't want to be listed"|t,
+value: settings.ignore,
+autofocus: false,
+errors: settings.getErrors('ignore')
+}) }}
+
+
+
+
+
+
+
+
+{% set ignore = settings.ignore ? settings.ignore : '' %}
+{{ ignore }}
